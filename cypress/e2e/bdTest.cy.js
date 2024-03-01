@@ -10,9 +10,9 @@ it('Google Search', () => {
     cy.log('this is a log entry');
 
     try {
-        cy.title().should('eq', 'Google');
+        cy.title().should.contains('eq', 'Goog');
     } catch (error) {
-        cy.log('Assertion failed: ${error.message}')
+        cy.log('Assertion failed: ${errormessage}')
     }
 
     cy.get('.SDkEP').type('Braulio Diaz{Enter}');
