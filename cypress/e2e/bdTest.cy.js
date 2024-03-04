@@ -4,9 +4,11 @@
 //     cy.visit('https://www.instagram.com/')
 // })
 
+let myName = "Braulio Diaz"
+let URL = "https://google.com/"
 
 it('Google Search', () => {
-    cy.visit('https://www.google.com/');
+    cy.visit(URL);
     cy.log('this is a log entry');
 
     try {
@@ -15,8 +17,8 @@ it('Google Search', () => {
         cy.log('Assertion failed: ${errormessage}')
     }
 
-    cy.get('.SDkEP').type('Braulio Diaz{Enter}');
-    cy.wait(2000);
+    cy.get('.SDkEP').type(myName + '{Enter}');
+    cy.wait(4000);
     cy.contains('Not now').click();
     cy.contains('diazbraulio', ).click();
 })
